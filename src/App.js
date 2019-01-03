@@ -5,6 +5,7 @@ import NavBar from './components/layout/NavBar';
 import DetailMovement from './components/movement/DetailMovement';
 import SignIn from './components/auth/SignIn' 
 import SignUp from './components/auth/SignUp' 
+import CreateMovement from './components/movement/CreateMovement'
 
 class App extends Component {
   render() {
@@ -14,9 +15,10 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/movement/:id' component={DetailMovement} />
             <Route path='/login' component={SignIn} />
             <Route path='/register' component={SignUp} />
+            <Route path='/movement' component={CreateMovement} />
+            <Route path='/movement/:id' component={DetailMovement} />
           </Switch>
         </div>
       </BrowserRouter>

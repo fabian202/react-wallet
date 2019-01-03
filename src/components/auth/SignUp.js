@@ -41,7 +41,7 @@ export class SignUp extends Component {
                 <label htmlFor="lastName">Last Name</label>
             </div>
             <div className="input-field">
-                <button className="btn red lighten-1 z-depth-0">Entrar</button>
+                <button className="btn red lighten-1 z-depth-0">Aceptar</button>
             </div>
         </form>
       </div>
