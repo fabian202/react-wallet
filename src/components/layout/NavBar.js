@@ -7,7 +7,7 @@ const NavBar = () => {
     return (
         <nav>
             <div className="nav-wrapper blue darken-4">
-                <Link to="#" className="brand-logo">Wallet</Link>
+                <Link to="/" className="brand-logo">Wallet</Link>
                 <SecureLinks />
                 <PublicLinks />
             </div>

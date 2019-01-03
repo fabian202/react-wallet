@@ -25,7 +25,7 @@ export class CreateMovement extends Component {
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
-            <h5 className="grey-text text-darken-3">Registro</h5>
+            <h5 className="grey-text text-darken-3">Nuevo Movimiento</h5>
             <div className="input-field">
                 <input type="text" id="description" name="description" onChange={this.handleChange} />
                 <label htmlFor="description">Descripción</label>
