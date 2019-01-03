@@ -3,7 +3,7 @@ import React from 'react';
 const ListMovement = () => {
     return (
         <div>
-            <h3 class="header">Movimientos</h3>
+            <h3 className="header">Movimientos</h3>
             <table className="highlight"> 
                 <tbody>
                     <tr>
