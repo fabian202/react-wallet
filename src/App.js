@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import{ BrowserRouter } from 'react-router-dom';
-
+import{ BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './components/home/Home';
 import NavBar from './components/layout/NavBar';
 
 class App extends Component {
@@ -9,6 +9,9 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <NavBar />
+          <Switch>
+            <Route path='/' component={Home} />
+          </Switch>
         </div>
       </BrowserRouter>
     );
