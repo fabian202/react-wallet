@@ -14,7 +14,9 @@ const movementReducer = (state = initState, action) => {
         case 'ADD_MOVEMENT':
             console.log('added', action.movement);
             break;
-    
+        case 'ADD_MOVEMENT_ERROR':
+            console.log('errorr', action.err)
+            break;
         default:
             break;
     }
