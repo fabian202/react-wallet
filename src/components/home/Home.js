@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
 import ListMovement from '../movement/ListMovement';
 import TotalMovement from '../movement/TotalMovement';
-import { connect } from 'react-redux'
+
 
 class Home extends Component {
     render() {
@@ -22,10 +22,4 @@ class Home extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        movements: state.movement.movements
-    }
-}
-
-export default connect(mapStateToProps)(Home);
+export default Home;

@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux'
 
 const ListMovement = ({movements}) => {
     const moves = movements && movements.map((movement, i) => {
@@ -22,4 +25,19 @@ const ListMovement = ({movements}) => {
     )
 }
 
-export default ListMovement;
+const mapStateToProps = (state) => {
+    console.log(state);
+    
+    return {
+        movements: state.firestore.ordered.movements
+    }
+}
+
+// export default firestoreConnect()(ListMovement);
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        {collection: 'movements'}
+    ])
+)(ListMovement);
