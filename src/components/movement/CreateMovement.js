@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { createMovement } from '../../store/actions/movementActions';
 
 export class CreateMovement extends Component {
 
@@ -17,7 +19,7 @@ export class CreateMovement extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        this.props.createMovement(this.state);
     }
   render() {
     const date = new Date().toISOString().substr(0,10);
@@ -60,4 +62,10 @@ export class CreateMovement extends Component {
   }
 }
 
-export default CreateMovement
+const mapDispatchToProps = (dispatch) => {
+    return {
+        createMovement: (movement) => dispatch(createMovement(movement))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(CreateMovement)

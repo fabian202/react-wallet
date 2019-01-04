@@ -7,6 +7,17 @@ const initState = {
 }
 
 const movementReducer = (state = initState, action) => {
+
+    console.log(action);
+    
+    switch (action.type) {
+        case 'ADD_MOVEMENT':
+            console.log('added', action.movement);
+            break;
+    
+        default:
+            break;
+    }
     return state;
 }
 
