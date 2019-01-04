@@ -1,26 +1,21 @@
 import React from 'react';
 
-const ListMovement = () => {
+const ListMovement = ({movements}) => {
+    const moves = movements && movements.map((movement, i) => {
+        return (
+            <tr key={i}>
+                <td>{ movement.description }</td>
+                <td>{ movement.amount }</td>
+                <td>{ movement.date }</td>
+            </tr>
+        )
+    });
     return (
         <div>
             <h3 className="header">Movimientos</h3>
             <table className="highlight"> 
                 <tbody>
-                    <tr>
-                        <td>Alvin</td>
-                        <td>Eclair</td>
-                        <td>$0.87</td>
-                    </tr>
-                    <tr>
-                        <td>Alan</td>
-                        <td>Jellybean</td>
-                        <td>$3.76</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>Lollipop</td>
-                        <td>$7.00</td>
-                    </tr>
+                    { moves }
                 </tbody>
             </table>
         </div>

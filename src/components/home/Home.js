@@ -1,9 +1,12 @@
 import React , { Component } from 'react';
 import ListMovement from '../movement/ListMovement';
 import TotalMovement from '../movement/TotalMovement';
+import { connect } from 'react-redux'
 
 class Home extends Component {
     render() {
+        const { movements } = this.props;
+        console.log(movements);
         return(
             <div className="container">
             <div className="row">
@@ -11,7 +14,7 @@ class Home extends Component {
                     <TotalMovement />
                 </div>
                 <div className="col s12 m8 l9">
-                    <ListMovement />
+                    <ListMovement movements={movements} />
                 </div>
             </div>
             </div>
@@ -19,4 +22,10 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        movements: state.movement.movements
+    }
+}
+
+export default connect(mapStateToProps)(Home);
