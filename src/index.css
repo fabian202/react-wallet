@@ -12,3 +12,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.collection-wrapper {
+  position: relative;
+}
+
+.collection-wrapper .secondary-content {
+  position: absolute;
+  left: 95%;
+  top: 45%;
+}

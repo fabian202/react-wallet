@@ -17,8 +17,8 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route path='/login' component={SignIn} />
             <Route path='/register' component={SignUp} />
-            <Route path='/movement' component={CreateMovement} />
             <Route path='/movement/:id' component={DetailMovement} />
+            <Route path='/movement' component={CreateMovement} />
           </Switch>
         </div>
       </BrowserRouter>
