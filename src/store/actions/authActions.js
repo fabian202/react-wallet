@@ -35,7 +35,8 @@ export const register = (user) => {
             return firestore.collection('users').doc(res.user.uid).set({
                 name: user.name,
                 lastName: user.lastName,
-                initials: user.name[0] + user.lastName[0]
+                initials: user.name[0] + user.lastName[0],
+                amount: 0
             })
         }).then(() => {
             dispatch({ type: 'REGISTER_SUCCESS'});
