@@ -1,13 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
-const TotalMovement = () => {
+const TotalMovement = ({ profile }) => {
     return (
         <div className="card grey lighten-2 hoverable">
             <div className="card-content">
-                <span className="card-title center-align">100000 $</span>
+                <span className="card-title center-align">{ profile.amount } $</span>
             </div>
         </div>
     );
 }
 
-export default TotalMovement;
+const mapsStateToProps = (state) => {
+    return {
+        profile: state.firebase.profile
+    }
+}
+
+export default connect(mapsStateToProps)(TotalMovement);

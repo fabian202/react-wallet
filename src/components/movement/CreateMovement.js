@@ -20,6 +20,7 @@ export class CreateMovement extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.createMovement(this.state);
+        this.props.history.push('/');
     }
   render() {
     const date = new Date().toISOString().substr(0,10);
