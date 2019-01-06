@@ -28,13 +28,17 @@ const ListMovement = ({movements}) => {
 
 const mapStateToProps = (state) => {
     return {
-        movements: state.firestore.ordered.movements
+        movements: state.firestore.ordered.movements,
+        uid: state.firebase.auth.uid
     }
 }
 
 export default compose(
     connect(mapStateToProps),
-    firestoreConnect([
-        {collection: 'movements'}
+    firestoreConnect(props => [
+        {
+            collection: 'movements',
+            where: ['uid', '==', props.uid]
+        }
     ])
 )(ListMovement);

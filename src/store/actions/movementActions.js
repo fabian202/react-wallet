@@ -5,7 +5,8 @@ export const createMovement = (movement) => {
         const { amount } = getState().firebase.profile;
         const { uid } = getState().firebase.auth;
         firestore.collection('movements').add({
-            ...movement
+            ...movement,
+            uid
         }).then(() => {
             var newAmount = movement.type === 'Income' ? amount + parseInt(movement.amount) : amount - parseInt(movement.amount);
             return firestore.collection('users').doc(uid).update({
