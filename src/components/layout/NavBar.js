@@ -4,23 +4,22 @@ import SecureLinks from './SecureLinks';
 import PublicLinks from './PublicLinks';
 import { connect } from 'react-redux'
 
-const NavBar = () => {
+const NavBar = (props) => {
+    const { auth } = props;
+    const links = auth.uid ? <SecureLinks /> : <PublicLinks />;
     return (
         <nav>
             <div className="nav-wrapper blue darken-4">
                 <Link to="/" className="brand-logo">Wallet</Link>
-                <SecureLinks />
-                <PublicLinks />
+                { links }
             </div>
         </nav>
     )
 }
 
 const mapStatetoProps = (state) => {
-    console.log(state);
-    
     return {
-
+        auth: state.firebase.auth
     }
 } 
 
