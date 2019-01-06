@@ -17,11 +17,12 @@ const ListMovement = ({movements}) => {
             </li>
         )
     });
+
     return (
 
             <ul className='collection with-header'>
                 <li className="collection-header"><h5>Movimientos</h5></li>
-                { moves }
+                { moves && moves.length ? moves : <li>No hay movimientos <Link to="/movement" className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></Link></li> }
             </ul>
     )
 }
