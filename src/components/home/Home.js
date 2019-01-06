@@ -6,7 +6,6 @@ import TotalMovement from '../movement/TotalMovement';
 class Home extends Component {
     render() {
         const { movements } = this.props;
-        console.log(movements);
         return(
             <div className="container">
             <div className="row">

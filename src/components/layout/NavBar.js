@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SecureLinks from './SecureLinks';
 import PublicLinks from './PublicLinks';
+import { connect } from 'react-redux'
 
 const NavBar = () => {
     return (
@@ -15,4 +16,12 @@ const NavBar = () => {
     )
 }
 
-export default NavBar;
+const mapStatetoProps = (state) => {
+    console.log(state);
+    
+    return {
+
+    }
+} 
+
+export default connect(mapStatetoProps)(NavBar);

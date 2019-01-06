@@ -27,14 +27,10 @@ const ListMovement = ({movements}) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
-    
     return {
         movements: state.firestore.ordered.movements
     }
 }
-
-// export default firestoreConnect()(ListMovement);
 
 export default compose(
     connect(mapStateToProps),
